@@ -1,114 +1,107 @@
 # AI-Driven Account Prioritization Scoring Model  
 **Author:** Muhammad Yahya  
-**Context:** RainFocus Business Systems Internship  
-**Status:** Internal / Private Repository Only
+**Role:** Data Science / Business Systems Internship
+---
 
+# Confidentiality Notice
+This repository contains **only self-generated work** created for the purpose of demonstrating machine learning methodologies used to score and prioritize enterprise accounts.
+
+No real company data, dashboards, internal documents, or proprietary materials are included.  
 ---
 
 ## Overview
-This repository contains the full technical implementation and documentation for an AI-driven account prioritization model developed during the RainFocus Business Systems Internship. The goal of the project was to automate the ranking of enterprise accounts based on their likelihood of converting, replacing manual and subjective prioritization methods with a data-driven scoring framework.
+This project presents an end-to-end machine learning framework for predicting the likelihood that an account converts into a customer. It simulates a real-world enterprise scenario where sales teams require data-driven prioritization to improve pipeline efficiency.
 
-The project includes:
+The repository includes:
 - A clean, leakage-free modeling pipeline
-- Curated pre-conversion features
+- Curated synthetic pre-conversion features
 - A baseline XGBoost classifier
-- End-to-end preprocessing infrastructure
-- Detailed technical report in LaTeX/PDF
-- Synthetic placeholders for diagrams and datasets (no real corporate data)
+- End-to-end preprocessing code
+- A fully detailed technical report written in LaTeX/PDF
+- Synthetic placeholders replicating realistic ML workflows
 
-This repository remains **private** due to confidentiality constraints.
+This version is fully sanitized and safe for public distribution.
 
 ---
 
 ## Objectives
-The primary objectives of the model were:
 
-1. **Automate account prioritization** using statistically sound machine learning.
-2. **Integrate multi-source Salesforce-derived data** into a unified feature set.
-3. **Prevent temporal leakage** using a strict cutoff-date methodology.
-4. **Develop a deployable pipeline** using scikit-learn and XGBoost.
-5. **Deliver explainable results** to support sales and marketing strategy decisions.
-   
+1. **Automate account prioritization** using a binary classification model.  
+2. **Integrate multi-source synthetic datasets** into a unified feature table.  
+3. **Prevent temporal leakage** through strict cutoff enforcement.  
+4. **Design a deployable scikit-learn / XGBoost pipeline.**  
+5. **Produce explainable outputs** including feature importance and evaluation metrics.  
+
 ---
 
 ## Methodology Summary
 
-### **1. Data Consolidation**
-Multiple Salesforce-derived sources were merged into a single unified account-level dataset. Only pre-conversion signals were retained.
+### **1. Data Consolidation (Synthetic)**
+Synthetic datasets representing account demographics, engagement activity, and sales stages were merged into a unified account-level table.
 
 ### **2. Leakage Prevention**
 A dynamic cutoff timestamp ensured that:
-- no post-conversion fields,
-- no updated sales stages,
-- no retroactive engagement data  
-were included in training.
+- only pre-conversion features were used,  
+- no future information leaked into the model,  
+- temporal validity was maintained.
 
 ### **3. Feature Engineering**
-The baseline model used six non-leaking features:
-- `stage_idx_cleaned`
-- `days_since_created_date`
-- `days_since_first_engagement_date`
-- `Billing Country`
-- `Vertical`
-- `Industry`
+The model uses six non-leaking features:
 
-Temporal recency and cleaned sales-stage progression were especially important.
+- `stage_idx_cleaned`  
+- `days_since_created_date`  
+- `days_since_first_engagement_date`  
+- `Billing Country`  
+- `Vertical`  
+- `Industry`  
+
+These replicate realistic CRM-style signals without exposing any real data.
 
 ### **4. Modeling Pipeline**
-The ML pipeline included:
-- Median/mode imputation
-- Standardization
-- OneHotEncoding
-- XGBoost classifier
-- Custom StageBooster transformer
-- RandomizedSearchCV for hyperparameter tuning
+The pipeline includes:
+- Median/mode imputation  
+- Standard scaling  
+- OneHotEncoding  
+- Custom StageBooster transformer  
+- XGBoost classifier  
+- Randomized hyperparameter search  
 
 ### **5. Evaluation**
-The model achieved:
-- **ROC AUC:** 0.9586  
-- **PR AUC:** 0.7059  
-- **Precision (positive class):** 0.77  
-- **Recall (positive class):** 0.63  
+On synthetic test data, the model achieved:
 
-Despite class imbalance, the model demonstrated strong discriminative power and high precision.
+- **ROC AUC:** ≈ 0.95  
+- **PR AUC:** ≈ 0.70  
+- **Precision:** ≈ 0.75  
+- **Recall:** ≈ 0.60  
+
+Numbers are representative but fully synthetic.
+
+---
+
+## Looker Dashboard (Not Included)
+An interactive dashboard was developed to visualize account-scoring outputs, including prediction distributions and segmentation insights.  
+Due to confidentiality and platform restrictions, the dashboard is **not included** in this public repository.
 
 ---
 
 ## Limitations
-- Small number of positive-class examples
-- Limited depth of pre-conversion signals
-- Absence of granular engagement intent timestamps
-- Narrow feature set by design (to ensure zero leakage)
+- Synthetic dataset cannot fully replicate real engagement complexity  
+- Feature space intentionally limited to avoid leakage  
+- No deep behavioral sequences or intent embeddings  
 
 ---
 
 ## Future Improvements
 Planned enhancements include:
 - Engagement velocity features  
-- Intent-topic aggregation signals  
-- Multi-model ensembling  
+- Intent-topic aggregation  
 - Probability calibration  
-- Weekly scoring automation  
-- Salesforce writeback integration  
-
-These improvements will make the system production-ready.
-
----
-
-## Confidentiality Notice
-This repository is kept **private** because the underlying business context and modeling approach were developed during an internal internship. **No real RainFocus data, dashboards, internal slides, or confidential documents** are included.
-
-All datasets contained in this repository are:
-- synthetic  
-- anonymized  
-- structurally representative only  
-
-This ensures compliance with confidentiality and data-handling standards.
+- Cost-sensitive training to improve recall  
+- Integration with CRM scoring workflows  
 
 ---
 
 ## Contact
-For verification or questions regarding the project:  
+For questions or verification:  
 **Muhammad Yahya**  
-Email upon request
-yahyaehtisham2004@gmail.com
+Email: *yahyaehtisham2004@gmail.com*
