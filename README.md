@@ -28,35 +28,7 @@ The primary objectives of the model were:
 3. **Prevent temporal leakage** using a strict cutoff-date methodology.
 4. **Develop a deployable pipeline** using scikit-learn and XGBoost.
 5. **Deliver explainable results** to support sales and marketing strategy decisions.
-
----
-
-## Repository Structure
-├── src/
-│ ├── preprocessing.py # Imputers, encoders, scalers
-│ ├── stage_booster.py # Custom transformer for stage weighting
-│ ├── model_training.py # XGBoost pipeline and RandomizedSearchCV
-│ ├── evaluate.py # Metrics, AUC, threshold analysis
-│ └── utils.py # Helper functions
-│
-├── data/
-│ └── synthetic_sample.csv # Synthetic example dataset (safe)
-│
-├── paper/
-│ ├── report.tex # Full technical report (LaTeX)
-│ ├── report.pdf # Compiled PDF
-│ ├── matrix.png # Confusion matrix (safe)
-│ ├── process.png # Workflow diagram (safe)
-│ └── logo.jpg # Placeholder logo
-│
-├── notebooks/
-│ └── exploratory.ipynb # Safe notebook demonstrating pipeline steps
-│
-└── README.md # This file
-
-
-No proprietary datasets, dashboards, or internal documents are included.
-
+   
 ---
 
 ## Methodology Summary
@@ -138,5 +110,5 @@ This ensures compliance with confidentiality and data-handling standards.
 ## Contact
 For verification or questions regarding the project:  
 **Muhammad Yahya**  
-Knox College — Integrative Business & Data Science  
 Email upon request
+yahyaehtisham2004@gmail.com
