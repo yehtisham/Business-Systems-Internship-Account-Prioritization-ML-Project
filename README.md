@@ -6,7 +6,7 @@
 # Confidentiality Notice
 This repository contains **only self-generated work** created for the purpose of demonstrating machine learning methodologies used to score and prioritize enterprise accounts.
 
-No real company data, dashboards, internal documents, or proprietary materials are included.  
+No Company dashboards, internal documents, or proprietary materials are included.  
 ---
 
 ## Overview
