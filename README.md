@@ -3,11 +3,11 @@
 **Role:** Data Science / Business Systems Internship
 ---
 
-# Confidentiality Notice
+## Confidentiality Notice
 This repository is a methodological case study created for portfolio and educational purposes.
 It contains no raw company data, no client-identifiable information, and no proprietary schemas.
 All dataset descriptions and metrics are presented at a high level and are intentionally abstracted. 
----
+
 
 ## Overview
 This project presents an end-to-end machine learning framework for predicting the likelihood that an account converts into a customer. It simulates a real-world enterprise scenario where sales teams require data-driven prioritization to improve pipeline efficiency.
