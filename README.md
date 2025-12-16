@@ -7,102 +7,90 @@
 
 This repository is a methodological case study created for portfolio and educational purposes.  
 It contains **no raw company data**, **no client-identifiable information**, and **no proprietary schemas**.  
-All dataset descriptions, feature definitions, and metrics are presented at a high level and are intentionally abstracted.
+All dataset descriptions, feature definitions, and results are presented at a high level and are intentionally abstracted.
 
+---
 
 ## Overview
-This project presents an end-to-end machine learning framework for predicting the likelihood that an account converts into a customer. It simulates a real-world enterprise scenario where sales teams require data-driven prioritization to improve pipeline efficiency.
 
-The repository includes:
-- A clean, leakage-free modeling pipeline
-- Curated synthetic pre-conversion features
-- A baseline XGBoost classifier
-- End-to-end preprocessing code
-- A fully detailed technical report written in LaTeX/PDF
-- Synthetic placeholders replicating realistic ML workflows
+This project demonstrates an end-to-end scoring workflow for estimating the likelihood that an account converts into a customer. The goal is to support sales and operations teams with data-driven prioritization and clearer pipeline decisioning.
 
-This version is fully sanitized and safe for public distribution.
+**Included in this repository**
+- A reproducible preprocessing + modeling workflow (scikit-learn pipeline + XGBoost)
+- Example feature engineering patterns for CRM-style signals (sanitized / synthetic)
+- A technical methodology report (PDF)
+
+**Not included**
+- Any raw exports, internal tables, or proprietary schemas
+- Any client-identifiable data
+- Production credentials, connections, or deployment scripts tied to internal systems
 
 ---
 
 ## Objectives
 
-1. **Automate account prioritization** using a binary classification model.  
-2. **Integrate multi-source synthetic datasets** into a unified feature table.  
-3. **Prevent temporal leakage** through strict cutoff enforcement.  
-4. **Design a deployable scikit-learn / XGBoost pipeline.**  
-5. **Produce explainable outputs** including feature importance and evaluation metrics.  
+1. Automate account prioritization via a binary classification score  
+2. Combine multi-source inputs into a unified account-level feature table (synthetic/sanitized)  
+3. Prevent temporal leakage through pre-outcome cutoffs and careful feature selection  
+4. Package modeling into a deployable pipeline (imputation → encoding → model)  
+5. Provide interpretable outputs (feature importance and evaluation summaries)
 
 ---
 
 ## Methodology Summary
 
-### **1. Data Consolidation (Synthetic)**
-Synthetic datasets representing account demographics, engagement activity, and sales stages were merged into a unified account-level table.
+### 1) Data Consolidation  
+Synthetic/sanitized datasets representing firmographics, engagement activity, and pipeline signals are merged to an account-level table.
 
-### **2. Leakage Prevention**
-A dynamic cutoff timestamp ensured that:
-- only pre-conversion features were used,  
-- no future information leaked into the model,  
-- temporal validity was maintained.
+### 2) Leakage Prevention  
+A cutoff timestamp is enforced so that only information available **before** the outcome window is used for training and scoring.
 
-### **3. Feature Engineering**
-The model uses six non-leaking features:
+### 3) Feature Engineering (Example Set)  
+The public version uses a deliberately small feature set to demonstrate the approach without exposing sensitive detail:
 
 - `stage_idx_cleaned`  
 - `days_since_created_date`  
 - `days_since_first_engagement_date`  
-- `Billing Country`  
-- `Vertical`  
-- `Industry`  
+- `billing_country`  
+- `vertical`  
+- `industry`  
 
-These replicate realistic CRM-style signals without exposing any real data.
+> Note: Feature names may appear in snake_case in the public pipeline for consistency.
 
-### **4. Modeling Pipeline**
-The pipeline includes:
-- Median/mode imputation  
-- Standard scaling  
-- OneHotEncoding  
-- Custom StageBooster transformer  
+### 4) Modeling Pipeline  
+- Missing value handling (median/mode)  
+- Standardization for numeric fields  
+- One-hot encoding for categorical fields  
 - XGBoost classifier  
-- Randomized hyperparameter search  
+- Randomized hyperparameter search with stratified CV
 
-### **5. Evaluation**
-On synthetic test data, the model achieved:
-
-- **ROC AUC:** ≈ 0.95  
-- **PR AUC:** ≈ 0.70  
-- **Precision:** ≈ 0.75  
-- **Recall:** ≈ 0.60  
-
-Numbers are representative but fully synthetic.
+### 5) Evaluation  
+The report and code include evaluation outputs (ROC AUC / PR AUC / precision / recall). Any numeric results shown in this repository are **demonstration-only** and derived from **synthetic/sanitized** inputs.
 
 ---
 
-## Looker Dashboard (Not Included)
-An interactive dashboard was developed to visualize account-scoring outputs, including prediction distributions and segmentation insights.  
-Due to confidentiality and platform restrictions, the dashboard is **not included** in this public repository.
+## BI Dashboard  
+A BI dashboard was used to visualize scoring outputs (distributions, segments, and trends).  
+The dashboard artifact is **not included** in this repository.
 
 ---
 
 ## Limitations
-- Synthetic dataset cannot fully replicate real engagement complexity  
-- Feature space intentionally limited to avoid leakage  
-- No deep behavioral sequences or intent embeddings  
+- Synthetic inputs cannot reproduce full production complexity  
+- Feature space is intentionally constrained to reduce leakage and exposure risk  
+- This public version focuses on methodology and structure rather than production deployment
 
 ---
 
 ## Future Improvements
-Planned enhancements include:
-- Engagement velocity features  
-- Intent-topic aggregation  
+- Engagement velocity and trend features  
+- Better intent/topic aggregation (where available)  
 - Probability calibration  
-- Cost-sensitive training to improve recall  
-- Integration with CRM scoring workflows  
+- Cost-sensitive optimization for higher recall under class imbalance  
+- CRM scoring integration patterns (generic)
 
 ---
 
 ## Contact
-For questions or verification:  
 **Muhammad Yahya**  
-Email: *yahyaehtisham2004@gmail.com*
+Email: yahyaehtisham2004@gmail.com
