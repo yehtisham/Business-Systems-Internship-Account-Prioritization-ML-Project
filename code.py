@@ -1,5 +1,5 @@
 """
-Public-safe, portfolio version of an Account Prioritization / BI scoring pipeline.
+Portfolio version of an Account Prioritization / BI scoring pipeline.
 
 - No raw data shipped in this repo.
 - File and column names are intentionally generic.
