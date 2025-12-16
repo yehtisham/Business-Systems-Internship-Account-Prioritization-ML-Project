@@ -1,11 +1,13 @@
 # AI-Driven Account Prioritization Scoring Model  
-**Role:** Data Science / Business Systems Internship
+**Role:** Data Science / Business Systems Internship  
+
 ---
 
-##Confidentiality Notice
-This repository is a methodological case study created for portfolio and educational purposes.
-It contains no raw company data, no client-identifiable information, and no proprietary schemas.
-All dataset descriptions and metrics are presented at a high level and are intentionally abstracted. 
+## **Confidentiality Notice**
+
+This repository is a methodological case study created for portfolio and educational purposes.  
+It contains **no raw company data**, **no client-identifiable information**, and **no proprietary schemas**.  
+All dataset descriptions, feature definitions, and metrics are presented at a high level and are intentionally abstracted.
 
 
 ## Overview
