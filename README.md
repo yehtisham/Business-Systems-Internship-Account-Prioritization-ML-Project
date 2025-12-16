@@ -1,9 +1,8 @@
 # AI-Driven Account Prioritization Scoring Model  
-**Author:** Muhammad Yahya  
 **Role:** Data Science / Business Systems Internship
 ---
 
-## Confidentiality Notice
+#Confidentiality Notice
 This repository is a methodological case study created for portfolio and educational purposes.
 It contains no raw company data, no client-identifiable information, and no proprietary schemas.
 All dataset descriptions and metrics are presented at a high level and are intentionally abstracted. 
