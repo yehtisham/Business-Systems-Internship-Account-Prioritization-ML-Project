@@ -4,9 +4,9 @@
 ---
 
 # Confidentiality Notice
-This repository contains **only self-generated work** created for the purpose of demonstrating machine learning methodologies used to score and prioritize enterprise accounts.
-
-No Company dashboards, internal documents, or proprietary materials are included.  
+This repository is a methodological case study created for portfolio and educational purposes.
+It contains no raw company data, no client-identifiable information, and no proprietary schemas.
+All dataset descriptions and metrics are presented at a high level and are intentionally abstracted. 
 ---
 
 ## Overview
